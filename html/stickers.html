@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stickers</title>
+    <link rel="stylesheet" href="../assets/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <a href="../index.html">Inicio</a>
+        <a href="password.html">Siguiente</a>
+    </header>
+
+    <div class="content container my-5">
+        <h1>Puedes llevar hasta 10 stickers</h1>
+        
+        <div class="stickers">
+            <div class="sticker-item">
+                <img class="img-fluid" src="../assets/images/stitch.png" alt="sticker de stitch">
+                <input type="text" name="" id="stitch">
+            </div>
+
+            <div class="sticker-item">
+                <img class="img-fluid" src="../assets/images/trumanshow.jpg" alt="sticker de truman show">
+                <input type="text" name="" id="trumanshow">
+            </div>
+
+            <div class="sticker-item">
+                <img class="img-fluid" src="../assets/images/wishyouwerehere.jpg" alt="sticker de pink floyd">
+                <input type="text" name="" id="pinkfloyd">
+            </div>
+        </div>
+
+        <p class="mensaje">Llevas <span class="cantidad">0</span> stickers</p>
+
+        <button onclick="
+            var stitch = document.querySelector('#stitch').value
+            var truman = document.querySelector('#trumanshow').value
+            var pinkfloyd = document.querySelector('#pinkfloyd').value
+
+            var suma = Number(Number(stitch) + Number(truman) + Number(pinkfloyd))
+
+            if (suma <= 10) {
+                var cantidad = document.querySelector('.cantidad')
+                cantidad.innerHTML = suma
+            }
+
+            else {
+                var cantidad = document.querySelector('.cantidad')
+                cantidad.innerHTML = 'demasiados'
+            }
+
+            "><a href="#">Verificar</a>
+        </button>
+    </div>
+
+    <script>
+        var stitch = document.querySelector('#stitch').value
+        var truman = document.querySelector('#trumanshow').value
+        var pinkfloyd = document.querySelector('#pinkfloyd').value
+
+        var cantidad = document.querySelector('.cantidad')
+        var contador = cantidad.innerHTML
+
+        var suma = Number(Number(stitch) + Number(truman) + Number(pinkfloyd))
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
